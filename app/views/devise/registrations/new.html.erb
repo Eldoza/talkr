@@ -1,49 +1,45 @@
 
-<div class="container">
-  <div class="border-form-div">
-    <!-- <div class="register pull-left"> -->
-        <div class="header panel-header">
-          <h1>Sign up</h1>
-          <h6 class="center"> It's free and always will be.</h6>
-        </div>
+<div class="container log-in">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>Sign up</h1>
+      <h6> It's free and always will be.</h6>
+    </div>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name))  do |f| %>
           <%= devise_error_messages! %>
 
-          <div class="form-group clearfix panel-group">
-            <%= f.label :username %><br />
-            <%= f.text_field :username, placeholder: 'e.g. Jon Snow' %>
+          <div class="form-group">
+            <%= f.label :username%><br />
+            <%= f.text_field :username, placeholder: 'e.g. Jon Snow', class:"form-control" %>
           </div>
 
-          <div class="form-group clearfix">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, placeholder: 'JonSnow@email.com' %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, placeholder: 'JonSnow@email.com',class:"form-control" %>
           </div>
 
-          <div class="form-group clearfix">
+          <div class="form-group">
             <%= f.label :password %>
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "off",placeholder: 'French Swear word' %>
+            <%= f.password_field :password, autocomplete: "off",placeholder: 'french swear word',class:"form-control" %>
           </div>
 
-          <div class="form-group clearfix">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Say it again baby!' %>
+          <div class="form-group">
+            <%= f.label :password_confirmation%>
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Say it again baby!',class:"form-control" %>
           </div>
 
-          <div class="actions">
-            <%= f.submit "Sign up", class:"btn btn-primary btn-danger"%>
+          <div class="form-group">
+            <%= f.submit "Sign up", class:"btn btn-primary btn-lg btn-primary"%>
           </div>
-        <% end %>
-        <div class="devise-links">
+          <% end %>
+
+
           <%= render "devise/shared/links" %>
         </div>
-
-
-
-
-    <!-- </div> -->
-  </div>
-</div>
+      </div>
+    </div>
